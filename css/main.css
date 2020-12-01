@@ -1,0 +1,106 @@
+/* h1 {
+    font-family: 'Courier New';
+    text-align: center;
+    color: white;
+}
+*/
+
+.s1 {
+    background: url("../images/IMG_20200103_200522.jpg");
+    background-size: cover;
+}
+
+.s2 {
+    background: url("../images/IMG_20200103_204249.jpg");
+    background-size: cover;
+}
+
+.s3 {
+    background: url("../images/IMG_20200105_021833.jpg");
+    background-size: cover;
+}
+
+span {
+    background: white !important;
+}
+
+ul {
+    align: bottom !important;
+}
+
+body {
+    height: 100vh;
+    background: white;
+    font-family: 'Poppins', Arial;
+    margin: 0;
+    display: grid;
+    place-content: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    height: 62%;
+    background: rgb(224, 224, 224);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: -7;
+}
+
+.card {
+    height: 30%;
+    width: 30%;
+    margin: 0 auto;
+    min-height: 500px;
+    padding: 3em;
+    cursor: pointer;
+    position: relative;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    height: 34%;
+    background: white;
+    top: 0;
+    right: 0;
+    z-index: -2;
+}
+
+h1 {
+    margin: 0;
+}
+
+.card::after {
+    height: 0;
+    background: blueviolet;
+    left: 0;
+    z-index: -1;
+}
+
+p {
+    clip-path: circle(0% at 0% 0);
+    color: white;
+    font-size: .9em;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 1.5em 0 0 3em;
+    position: relative;
+    transform: translatex(50px);
+}
+
+p::before {
+    content: "";
+    position: absolute;
+    height: 80%;
+    top: 2em;
+    left: 0;
+    height: 5px;
+    background: black;
+}
+
+
+/*# sourceMappingURL=main.css.map */

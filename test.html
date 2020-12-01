@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css" integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w==" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <!-- <div id="fullpage">
+        <div class="section s1">
+            <h1>the first section</h1>
+
+
+        </div>
+        <div class="section s2">
+            <h1>the first section</h1>
+
+
+        </div>
+        <div class="section s3">
+            <h1>the first section</h1>
+
+
+        </div>
+    </div>
+-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js" integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw==" crossorigin="anonymous"></script>
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            navigationTooltips: ['Home', 'Aboutus', 'Contact'],
+            showActiveTooltip: true,
+            scrollingSpeed: 1000,
+            navigationPosition: 'left',
+        })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js" integrity="sha512-6MT8e40N5u36Um5SXKtwZmoKcCSg1XaKtexnXZPpQ4iJDHrBEHXKz37fnDovXezsaCd4oKCH5Y+vrcl7qpLPoA==" crossorigin="anonymous"></script>
+    <div class="card" id="card">
+        <h1>your 1st event</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia consequuntur, repellat, voluptatem neque repellendus sunt iste unde deleniti molestiae laborum pariatur inventore voluptatum beatae dolorum natus dolor. Ad, at recusandae.</p>
+    </div>
+
+    <script>
+        var card = document.getElementById('card');
+
+        var rule = CSSRulePlugin.getRule(".card::before");
+        var rule2 = CSSRulePlugin.getRule(".card::after");
+
+        var t1 = gsap.timeline({
+            defaults: {
+                ease: "back.inOut"
+            }
+        });
+        t1.to(rule, {
+            height: '100%'
+        })
+        t1.to(rule2, {
+            height: '100%'
+        }, "-=.3")
+        t1.to('h1', {
+            color: 'white'
+        }, "-=.5")
+        t1.to('p', {
+            "clipPath": "circle(140% at 0% 100%)",
+            "transform": "translateX(0)"
+        })
+        t1.pause();
+        card.addEventListener("mouseenter", () => {
+            t1.play();
+        })
+        card.addEventListener("mouseleave", () => {
+            t1.reverse();
+        })
+    </script>
+</body>
+
+</html>
